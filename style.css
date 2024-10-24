@@ -1,0 +1,1226 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+/* Webkit scrollbar styles */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #0b3d91, #ff1f5c); /* Gradient from dark blue to dark pink */
+    border-radius: 10px; /* Rounded corners */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Background of the scrollbar track */
+    background-color: black;
+
+}
+
+/* Additional styling for better visibility */
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #0b3d91, #ff007f); /* Slightly lighter gradient on hover */
+}
+body {
+    overflow-x: hidden;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.878), rgba(20, 2, 34, 0.588)), url("pictures/view-panda-bear-with-robotic-tech-parts.jpg");
+ background-attachment: fixed;
+ background-size: cover;
+ background-position: center;
+ position: relative;
+
+
+}
+
+.header{
+    min-height: 100vh;
+    width: 100%;
+        position: relative;
+}
+/* Main navigation bar styling */
+nav {
+    display: flex;
+    padding: 2% 6%;
+    padding-top: 0%;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent; /* Default background */
+}
+
+nav img {
+    width: 150px;
+}
+
+/* Navigation links styling */
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul {
+    list-style: none;
+}
+
+.nav-links ul li {
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 540;
+    font-size: 16px;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+    font-family: "Special Elite", system-ui;
+    font-weight: 400;
+    font-style: normal;
+
+    
+}
+/* Creating the circle hover effect */
+.nav-links ul li::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(104, 1, 58, 0.896); /* Cool semi-transparent blue */
+    border-radius: 50%;
+    z-index: 0; /* Behind the text */
+    transition: width 0.4s ease, height 0.4s ease, top 0.4s ease, left 0.4s ease;
+    transform: translate(-50%, -50%);
+}
+
+.nav-links ul li:hover::before {
+    width: 100%; /* Expand the circle */
+    height: 100%;
+    top: 50%;
+    left: 50%;
+}
+
+/* For smooth animations on hover */
+.nav-links ul li:hover::after {
+    width: 0%;
+}
+
+/* Hamburger icon and hide menu icon */
+.fa-bars,
+.fa-times {
+    display: none;
+    font-size: 28px;
+    color: #ffffff; /* White color for the icon */
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    /* Make the menu background translucent violet */
+    .nav-links {
+        position: absolute;
+        background: rgba(148, 0, 211, 0.8); /* Translucent violet */
+        height: 100vh;
+        width: 100%;
+        top: 0;
+        right: -200px; /* Hidden by default */
+        text-align: center;
+        transition: all 0.5s ease;
+        z-index: 99; /* Ensure it sits above other content */
+    }
+
+    /* When the menu is shown, it slides in from the right */
+    .nav-links.showMenu {
+        right: 0;
+    }
+
+    /* Show the hamburger icon */
+    .fa-bars {
+        display: block;
+        font-size: 15px;
+        color: #ffffff; /* White color for the hamburger icon */
+    }
+
+    /* Show the close icon when the menu is opened */
+    .fa-times {
+        display: block;
+        color: #ffffff; /* White color for the close icon */
+    }
+
+    /* Adjust the links to be stacked vertically */
+    .nav-links ul li {
+        display: block;
+        margin: 50px 0;
+    }
+
+    .nav-links ul li a {
+        font-size: 20px;
+        transition: font-size 0.3s ease; /* Smooth text expansion on hover */
+    }
+
+    /* Simpler hover effect - text expansion */
+    .nav-links ul li:hover a {
+        font-size: 24px; /* Expand text size when hovered */
+        color: #e405a4;  /* Choose another color for text hover, e.g., light yellow */
+        text-shadow: none;
+    }
+
+    /* Remove the circle hover effect */
+    .nav-links ul li::before {
+        display: none;
+    }
+}
+@media (max-width: 400px){
+    .fa-bars {
+        display: block;
+        font-size: 15px;
+        color: #ffffff; /* White color for the hamburger icon */
+    }
+}
+
+.logo{
+    width:200px;
+    padding-top: 15px;
+    cursor:pointer;
+    margin: 0;
+}
+.logo2{
+    width:100px;
+    cursor:pointer;
+    }
+    .logo3{
+        width:80px;
+        cursor:pointer;
+        margin-top: -30px;
+        }
+.text-box{
+    width:90%;
+    color:#ffffff;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+}
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Optional: Slide up effect */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.text-box h1 {
+    font-size: 76px;
+    color: #ffffff;
+    font-family: "Audiowide", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-shadow: 5px 5px 10px black;
+    opacity: 0; /* Initial hidden state */
+    animation: fadeIn 2s ease-in-out forwards; /* Apply fade-in */
+    margin-top: 50px;
+}
+
+/* Fade-in and zoom keyframe animation */
+@keyframes fadeInZoom {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(1); /* Start with default size */
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(0) scale(1.5); /* Zoom in */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1); /* Return to normal size */
+    }
+}
+
+.text-box h2 {
+    margin: 10px 0 40px;
+    font-size: 24px;
+    color: #ffffff;
+    font-family: "Audiowide", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-shadow: 5px 5px 10px black;
+    opacity: 0; /* Initial hidden state */
+    animation: fadeIn 3s ease-in-out forwards; /* Apply fade-in with further delay */
+
+}
+.text-box h3{
+    font-size:18px;
+    font-family: "Audiowide", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.text-box p {
+    margin: 10px 0 40px;
+    font-size: 45px;
+    padding-top: 25px;
+    color: #ffffff;
+    font-family: "Special Elite", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    text-shadow: 5px 5px 10px black;
+    opacity: 0; /* Initial hidden state */
+    animation: fadeInZoom 4.5s ease-in-out forwards; /* Apply fade-in and zoom effect */
+
+}
+
+.btn{
+    display:flex;
+    align-items: center;
+    padding:10px 20px;
+    border:0;
+    outline:0;
+    border-radius:5px;
+    background:rgb(59, 2, 116);
+    color:#fff;
+    font-weight:500;
+    cursor:pointer;
+    
+}
+.btn:hover{
+    display:flex;
+    align-items: center;
+    padding:10px 20px;
+    border:0;
+    outline:0;
+    border-radius:5px;
+    color:#361513;
+    background:#ffffff79;
+    font-weight:500;
+    cursor:pointer; 
+}
+.hero-btn{
+    display:inline-block;
+    text-decoration: none;
+    color:#ffffff;
+    border: 2px solid #ffffff;
+    padding:12px 34px;
+    font-size:16px;
+    background:rgba(48, 22, 48, 0.644);
+    position:relative;
+    cursor:pointer;
+}
+.hero-btn:hover{
+    border: 2px solid #090240;
+    background:#090240;
+    color:#fff;
+}
+nav .fa{
+    display: none;
+}
+@media(max-width: 700px){
+    .logo{
+        width:140px;
+    }
+    .text-box h1{
+        font-size:32px;
+    }
+    .text-box h2{
+        font-size:20px;
+    }
+    .text-box h3{
+        font-size:15px;
+    }
+    .text-box p{
+        font-size:20px;
+    }
+    .nav-links ul li{
+        display:block;
+    }
+    .nav-links{
+        position:absolute;
+        background:#150120;
+        height:100vh;
+        width:200px;
+        top:0;
+        right:-300px;
+        text-align:left;
+        z-index:2;
+        transition: 1s;
+    }
+    nav .fa{
+        display:block;
+        color:#f4f3f3;
+        margin:10px;
+        font-size:22px;
+        cursor:pointer;
+    }
+    .nav-links ul{
+        padding:25px;
+    }
+}
+.launch-time{
+    display:flex;
+    justify-content: center;
+    font-family: "Londrina Sketch", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+
+}
+.launch-time div{
+    text-align:center;
+    align-items: center;
+    font-family: "Londrina Sketch", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+.launch-time div p{
+
+    font-size:60px;
+    margin-bottom: -10px;
+    margin-top:30px;
+    font-family: "Londrina Sketch", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+p{
+    color:#777;
+    font-size:14px;
+    line-height:22px;
+    padding:10px;
+}
+ 
+
+
+.gradient-line {
+    height: 3px; /* Adjust thickness of the line */
+    width: 50%; /* Line width */
+    background: linear-gradient(270deg, #ffcc00, #ff69b4,rgb(39, 150, 224)); /* Gradient from yellow to pink */
+    background-size: 400% 400%; /* For smooth animation */
+    animation: gradientAnimation 3s ease infinite; /* Animation effect */
+    margin: 20px auto; /* Center the line horizontally */
+    transform: translateY(20px); /* Start lower for the float-in effect */
+    opacity: 0; /* Initially hidden */
+    transition: transform 1s ease, opacity 0.5s ease; /* Smooth transition for both transform and opacity */
+}
+
+/* Animation Keyframes */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Visible class to show the gradient line */
+.gradient-line.visible {
+    transform: translateY(0); /* Reset transform to float in */
+    opacity: 1; /* Show when visible */
+}
+
+
+
+/* Animation Keyframes */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%; /* Starting position */
+    }
+    50% {
+        background-position: 100% 50%; /* Middle position */
+    }
+    100% {
+        background-position: 0% 50%; /* Ending position */
+    }
+}
+
+
+
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    width: 100%;
+}
+
+.about_container {
+    display: flex;
+    flex-direction: row;
+    max-width: 1200px; /* Set a max width for larger screens */
+    width: 100%;
+    border-radius: 30px;
+    padding: 20px; /* Uniform padding for the container */
+}
+
+.about_text {
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    backdrop-filter: blur(10px);
+    border-radius: 10px; /* Optional: Add rounded corners to the text container */
+    margin-left: 10px; /* Space between the image and text container */
+    flex: 1; /* Allows it to grow and shrink equally */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 2.6s ease-in-out, transform 2.6s ease-in-out; /* Smooth transition */
+    transform: translateY(50px); /* Start slightly lower */
+    ;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+
+}
+
+.about_image {
+    flex: 1; /* Allows it to grow and shrink equally */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 2.6s ease-in-out, transform 2.6s ease-in-out; /* Smooth transition */
+    transform: translateY(60px); /* Start slightly lower */
+}
+.about_image,
+.about_text {
+    flex: 1; /* Allows both to grow and shrink equally */
+    opacity: 0; /* Hidden by default for fade-in effect */
+    transition: opacity 2.6s ease-in-out, transform 2.6s ease-in-out; /* Smooth transition */
+    transform: translateY(60px); /* Start slightly lower */
+}
+
+.about_content.visible {
+    opacity: 1; /* Show when visible */
+    transform: translateY(0); /* Reset transform */
+}
+.about_image img {
+    width: 85%;
+    height: auto; /* Responsive image */
+    border-radius: 30px;
+}
+
+.about_content.visible {
+    opacity: 1; /* Show when visible */
+    transform: translateY(0); /* Reset transform */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column; /* Stack the image and text */
+        padding: 30px;
+        align-items: center; /* Center content in the column layout */
+    }
+
+    .about_container {
+        flex-direction: column;
+        width: 100%; /* Ensure the container takes full width */
+        text-align: center; /* Center text for better appearance */
+    }
+
+    .about_image, .about_text {
+        width: 100%;
+        margin: 10px auto; /* Space between stacked elements on smaller screens */
+    }
+
+    .about_text {
+        max-width: 90%; /* Prevent overflow and maintain readability */
+        font-size: 14px; /* Reduced font size */
+    }
+
+    .about_image img {
+        max-width: 100%; /* Ensure image is responsive */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+
+
+
+/*---footer---*/
+.footer{
+    width:100%;
+    text-align: center;
+    padding: 20px 0;
+}
+.footer h4{
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+.footer p{
+    font-size: 11px;
+}
+.icons .fa{
+    margin:0 10px;
+    cursor:pointer;
+    padding:12px 0;
+    text-decoration:none;
+}
+.fa-heart-o{
+    color:#f44336;
+}
+.logo1{
+    width:80px;
+    cursor:pointer;
+    padding-bottom: -20px;
+    justify-content: center;
+}
+
+.countdown {
+    width: 100%; /* Make the container take the full width */
+    max-width: 92vw; /* Maximum width for the container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding-top: 25px;
+    margin: 0 auto; /* Center the countdown container */
+
+}
+
+.box {
+    width: 20vmin;
+    height: 20vmin;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+}
+@keyframes slideInVertical {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+span.num {
+    background-color: var(--color-glass);
+    backdrop-filter: blur(12px);
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    font-size: 4em;
+    box-shadow: var(--color-shadow);
+    border-radius: 0.1em;
+    font-family: "Londrina Sketch", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    animation: slideInVertical 1.5s ease-in-out forwards; 
+
+}
+
+span.num:after {
+    content: "";
+    position: absolute;
+    background-color: var(--color-glass);
+    height: 100%;
+    width: 50%;
+    left: 0;
+}
+
+span.text {
+    font-size: 1em;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    display: block;
+    width: 80%;
+    position: relative;
+    text-align: center;
+    bottom: 20px;
+    padding: 0.7em 0;
+    font-weight: 600;
+    border-radius: 0.3em;
+    box-shadow: var(--color-shadow);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .box {
+        width: 30vmin; /* Make the box larger on smaller screens */
+        height: 30vmin;
+    }
+
+    span.num {
+        font-size: 3em; /* Reduce the font size of numbers */
+    }
+
+    span.text {
+        font-size: 0.9em; /* Reduce the font size of text */
+    }
+}
+
+@media (max-width: 480px) {
+    .box {
+        width: 40vmin; /* Even larger for very small screens */
+        height: 40vmin;
+    }
+
+    span.num {
+        font-size: 2.5em; /* Further reduce font size */
+    }
+
+    span.text {
+        font-size: 0.8em; /* Adjust text size */
+    }
+}
+h1{
+    font-size: 56px;
+    color: #ffffff;
+    font-family: "Audiowide", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    text-shadow: 5px 5px 10px black;
+    opacity: 0; /* Initial hidden state */
+}
+/* Medium screens (tablets and small laptops) */
+@media (max-width: 900px) {
+    h1 {
+        font-size: 40px; /* Smaller font size for medium screens */
+    }
+}
+
+/* Small screens (mobile devices) */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 28px; /* Even smaller font size for mobile */
+    }
+}
+.hidden {
+    opacity: 0; /* Hidden by default */
+    transform: translateY(50px); /* Slightly moved down */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Smooth transition */
+}
+
+.visible {
+    opacity: 1; /* Fully visible when scrolled into view */
+    transform: translateY(0); /* Move back to its original position */
+}
+ /* Features */
+ .features{
+    min-height: 100vh;
+
+  }
+
+  .feature_content{
+    display: flex;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .card {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+
+}
+
+.card .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .5s;
+    border: 2.3px solid white;
+
+}
+
+.card .front {
+    transform: perspective(600px) rotateY(0deg);
+    box-shadow: 0 5px 10px #000;
+}
+
+.card .front img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card .front h3 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    background: rgb(255, 255, 255);
+    text-align: center;
+    font-family: "Special Elite", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    /* text-shadow: 2px 2px 2px yellow; */
+}
+
+.card .back {
+    transform: perspective(600px) rotateY(180deg);
+    /* Remove gradient and add glass effect */
+    background: rgba(255, 255, 255, 0.2); /* Light background with transparency for glass effect */
+    backdrop-filter: blur(10px); /* Apply a blur effect to the background */
+    padding: 15px;
+    color: #ffffff; /* Change text color to white */
+    /* text-shadow: 2px 3.5px 3.5px black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* Adjust shadow for depth */
+    font-family: "Special Elite", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1em; /* Increase font size */
+}
+
+
+.card .back .link {
+    border-top: solid 1px #f3f3f3;
+    height: 50px;
+    line-height: 50px;
+}
+
+.card .back .link a {
+    color: #f3f3f3;
+    text-decoration: none;
+}
+
+.card .back h3 {
+    font-size: 60px;
+    margin-top: 20px;
+    letter-spacing: 2px;
+    
+}
+
+.card .back p {
+    font-size: 16.5px;
+ color: white;
+    letter-spacing: 1px;
+    font-family: "Special Elite", system-ui;
+    font-weight: 400;
+    font-style: normal;
+} 
+
+.card:hover .front {
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.card:hover .back {
+    transform: perspective(600px) rotateY(360deg);
+}
+/* Initial state: hidden with transform */
+.scroll-card {
+    opacity: 0;
+    transform: translateX(-100px); /* Start below the visible area */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* When the card becomes visible, float in */
+.scroll-card.visible {
+    opacity: 1;
+    transform: translateX(0); /* Move to normal position */
+}
+
+/* Staggered animation using nth-child */
+.scroll-card:nth-of-type(1) {
+    transition-delay: 0.2s;
+}
+
+.scroll-card:nth-of-type(2) {
+    transition-delay: 0.4s;
+}
+
+.scroll-card:nth-of-type(3) {
+    transition-delay: 0.6s;
+}
+
+.scroll-card:nth-of-type(4) {
+    transition-delay: 0.8s;
+}
+
+.scroll-card:nth-of-type(5) {
+    transition-delay: 1s;
+}
+
+
+.glass-effect-text {
+    margin-top: 70px;
+    /* background: rgba(255, 255, 255, 0.593);  */
+    backdrop-filter: blur(10px); /* Apply blur for glass effect */
+    padding: 20px;
+    width: 80%;
+    border-radius: 10px; /* Rounded corners */
+    color: #fefefe; /* Dark text */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow for readability */
+    font-family: "Merienda", cursive; /* Custom font */
+    position: relative; /* Position relative for pseudo-elements */
+    overflow: hidden; /* Hide overflow */
+    opacity: 0; /* Initial state hidden */
+    transform: translateY(60px); /* Start slightly higher */
+    transition: opacity 1s ease, transform 1s ease; /* Smooth transition */
+    box-shadow: 2px 2px 5px #000;
+}
+
+/* Create a pseudo-element for the moving background effect */
+.glass-effect-text::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(270deg, #ffcc002e, #ff69b4a1, rgba(17, 66, 98, 0.318)); /* Gradient colors */
+    background-size: 400% 400%; /* For smooth animation */
+    animation: backgroundAnimation 6s ease infinite; /* Animation effect */
+    opacity: 0.3; /* Slightly transparent for a glass effect */
+    border-radius: 10px; /* Match the glass effect element */
+}
+
+/* Animation Keyframes for Background */
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 50%; /* Starting position */
+    }
+    50% {
+        background-position: 100% 50%; /* Middle position */
+    }
+    100% {
+        background-position: 0% 50%; /* Ending position */
+    }
+}
+
+.glass-effect-text p {
+    color: #ffffff; /* Dark text */
+    font-size: 1.2em; /* Adjust font size */
+    font-family: "Times New Roman", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal; 
+}
+
+/* Visible class to apply when element is in view */
+.scroll-text.visible {
+    opacity: 1; /* Make text visible */
+    transform: translateY(0); /* Move to normal position */
+}
+
+.contacts {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping of cards */
+    justify-content: center; /* Center the cards */
+    padding: 20px; /* Add padding around the contact section */
+}
+
+.contact-card {
+    background: rgba(255, 255, 255, 0.2); /* Glass effect background */
+    backdrop-filter: blur(10px); /* Blur effect for the glass */
+    border-radius: 10px; /* Rounded corners */
+    margin: 10px; /* Space between cards */
+    padding: 20px; /* Spacing inside the card */
+    width: calc(33.33% - 40px); /* 3 cards per row with margin */
+    text-align: center; /* Center text in cards */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+    transition: transform 0.2s; /* Smooth scaling transition */
+    opacity: 0; /* Start invisible */
+    transform: translateY(60px); /* Move down slightly */
+    transition: opacity 1.5s ease, transform 1.5s ease; /* Smooth transition */
+    overflow: hidden; /* Prevent content overflow */
+    max-height: 250px; /* Set a maximum height for the card */
+}
+
+.contact-card.visible {
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Move to original position */
+}
+
+.contact-card h3 {
+    margin-bottom: 10px; /* Space below heading */
+    color: white; /* Heading color */
+    text-shadow: 2px 2px 2px rgb(25, 69, 103); /* Shadow for heading */
+    overflow: hidden; /* Prevent overflow */
+    text-overflow: ellipsis; /* Show ellipsis for overflowing text */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.contact-card p {
+    margin: 5px 0; /* Space around paragraph text */
+    color: white; /* Paragraph color */
+    overflow: hidden; /* Prevent overflow */
+    text-overflow: ellipsis; /* Show ellipsis for overflowing text */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.contact-card a {
+    color: #00bfff; /* Link color */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.contact-card:hover {
+    transform: scale(1.05); /* Scale up on hover */
+    box-shadow: 2px 2px 5px blueviolet;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 900px) {
+    .contact-card {
+        width: calc(50% - 40px); /* 2 cards per row for medium screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-card {
+        width: calc(100% - 40px); /* 1 card per row for small screens */
+        max-height: none; /* Remove max height for small screens */
+    }
+
+    .contact-card h3, .contact-card p {
+        white-space: normal; /* Allow text to wrap on small screens */
+    }
+}
+.query{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            margin-bottom: 20px;
+}
+.query-card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    width: 370px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: white;
+    font-size: 0.8rem;
+    transform: translateY(60px); /* Move down slightly */
+    transition: opacity 1s ease, transform 1s ease; /* Smooth transition */
+}
+.query-card.visible {
+    opacity: 1; /* Fade in when visible */
+    transform: translateY(0); /* Move to original position */
+}
+
+.query-card p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.query-card a {
+    color: #00bfff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    
+
+}
+
+@media (max-width: 600px) {
+    .query-card {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .query-card p {
+        font-size: 0.9rem;
+    }
+}
+h2 {
+    opacity: 0; /* Initially hidden */
+    transform: translateY(60px); /* Move down slightly */
+    transition: opacity 1s ease, transform 1s ease; /* Smooth transition */
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 20px;
+}
+
+h2.visible {
+    opacity: 1; /* Fade in when visible */
+    transform: translateY(0); /* Move to original position */
+}
+
+/*---footer---*/
+.footer{
+    width:100%;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 80px;
+    padding-top: 20px;
+    background-color: rgba(0, 0, 0, 0.601);
+}
+.footer h4{
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+.footer p{
+    font-size: 15px;
+}
+.icons .fa{
+    margin:0 10px;
+    cursor:pointer;
+    padding:12px 0;
+    text-decoration:none;
+}
+.fa-heart-o{
+    color:#f44336;
+}
+.logo-container {
+    display: flex;
+    justify-content: center; /* Center both logos horizontally */
+    align-items: center;     /* Align logos vertically */
+    gap: 10px;               /* Add space between the logos */
+}
+
+.logo1 {
+    width: 100px;
+    cursor: pointer;
+    padding-bottom: 0; 
+    padding-top: 15px;      /* Remove negative padding */
+}
+.logo2 {
+    width: 60px;
+    cursor: pointer;
+    padding-bottom: 0;       /* Remove negative padding */
+}
+
+
+.glass-button {
+    display: inline-block;
+    padding: 20px 40px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff; /* Text color */
+    text-decoration: none;
+    background: linear-gradient(45deg, #5b0561, #9013fe);
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    z-index: 1; 
+    margin-top: -30px;
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transition for opacity and transform */
+            opacity: 0; /* Start invisible */
+            transform: translateY(30px);
+}
+.glass-button.visible{
+    opacity: 1; /* Start invisible */
+            transform: translateY(0px);
+}
+.glass-button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0; /* Ensure pseudo-element is below the button text */
+    border-radius: 30px;
+    opacity: 0.5; /* Default opacity */
+    transition: opacity 0.3s ease;
+}
+
+.glass-button:hover:before {
+    opacity: 1; /* On hover, make it fully opaque */
+}
+
+.glass-button:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(45deg, #4a90e2, #9013fe);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    color: white; /* Change text color on hover, if desired */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1288px) {
+    .glass-button {
+        padding: 15px 30px;
+        font-size: 20px;
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .glass-button {
+        padding: 10px 20px;
+        font-size: 18px;
+    }
+}
+.videos {
+    height: auto; /* Change height to auto to remove the fixed height */
+    margin-top: -100px;
+    margin-bottom: -40px;
+    display: flex;
+    flex-direction: column; /* Ensure the video container stacks vertically */
+    justify-content: flex-start; /* Align items to the start */
+    align-items: center; /* Center align items horizontally */
+    padding: 0; /* Remove any default padding */
+}
+
+.video-container {
+    width: 100%;
+    max-width: 450px; /* Set max width for a smaller video */
+    margin-top: 20px; /* Reduced margin to eliminate large gap */
+    margin-bottom: 20px; /* Optional: Add a little space below the video */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Start invisible */
+    transition: opacity 0.5s ease; /* Transition for opacity */
+    transform: rotate(270deg); /* Rotate the video */
+    transform-origin: center; /* Set the origin of rotation */
+    overflow: hidden; /* Hide overflow to prevent scroll */
+}
+
+.video-container.visible {
+    opacity: 1; /* Fully visible when in view */
+}
+
+video {
+    width: 100%; /* Responsive video */
+    height: auto; /* Maintain aspect ratio */
+}
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+    .videos{
+        margin-top: 2px;
+    }
+    .video-container {
+        max-width: 250px; /* Smaller max width for small screens */
+    }
+}
+
+@media (max-width: 400px) {
+    .videos{
+        margin-top: 2px;
+    }
+    .video-container {
+        max-width: 180px; /* Even smaller max width for very small screens */
+    }
+}
+

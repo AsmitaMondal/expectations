@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Event Details</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="events.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        
+    </head>
+    <body>
+        <section class="header">
+            <nav>
+                <a href="index.html"><img src="logo/christ.png" class="logo"></a>
+        
+                <a href="index.html"> <img src="logo/ex3.png" class="logo2"></a>
+            </nav>
+                
+        </nav>
+        <h1 id="discover-heading" class="hidden">CODECRACK CHRONICLES</h1>
+</section>
+
+<section id="about" class="about">
+    <div class="about_container">
+        <div class="about_image about_content">
+            <img src="pictures/cc1.jpg" alt="About Image">
+        </div>
+        <div class="about_text about_content">
+            <p style="font-size: 16px; font-family: 'Arial', sans-serif; color: #ffffff; line-height: 1.6;">
+                <strong>Time:</strong> 12:30 PM to 2:00 PM
+            </p>
+            <p style="font-size: 16px; font-family: 'Arial', sans-serif; color: #ffffff; line-height: 1.6;">
+                <strong>Venue:</strong> Audi LAB
+            </p>
+            <br>
+            <h3 style="color: #ff4500; font-size: 18px; font-family: 'Arial', sans-serif;">
+                Event Heads:
+            </h3>
+            <p style="font-size: 16px; font-family: 'Arial', sans-serif; color: #ffffff; line-height: 1.6;">
+                Anjali Gupta: 9382863612 <br>
+                Athalye Prachi Mangesh: 9763920424
+            </p>
+            <br>
+            <h3 style="color: #ffd700; font-size: 18px; font-family: 'Arial', sans-serif;">
+                Event Description:
+            </h3>
+            <p style="font-size: 16px; font-family: 'Arial', sans-serif; color: #ffffff; line-height: 1.6;">
+                CodeBreaker Hunt is an exciting team-based technical treasure hunt that tests participants' debugging and problem-solving skills across various programming languages. Teams will navigate through multiple stages, unlocking each level by solving code challenges to progress to the next. The event's ultimate goal is to discover the "JACKPOT" hidden in the final stage, with the fastest or most successful team winning the hunt.
+            </p>
+            <br>
+            <h3 style="color: #ffd700; font-size: 18px; font-family: 'Arial', sans-serif;">
+                Rules :
+            </h3>
+            <p style="font-size: 16px; font-family: 'Arial', sans-serif; color: #ffffff; line-height: 1.6;">
+                - All teams of 2 must register before the event begins. No changes in team members are allowed after registration.<br>
+                - Time limits for each round will be strictly enforced. Teams failing to meet the time or performance criteria will be eliminated at the end of each round.<br>
+                - After each round, the team must inform the event incharges present in the venue before starting with another round.<br>
+                - Each team can use only the provided laptops/computers. Personal laptops/phones are not allowed.<br>
+                - The use of AI tools for debugging is strictly prohibited.<br>
+                - Any team found copying or sharing solutions with other teams will be immediately disqualified.
+            </p>
+        </div>
+    </div>
+    
+        
+        
+        
+        
+    </div>
+</section>
+<center>
+    <button onclick="history.back()" 
+    style="background-color: #000000; color: #ffffff; font-size: 16px; padding: 10px 20px; border: none; border-radius: 20px;cursor: pointer; margin-top: 20px; margin-bottom: 10px;">
+Go Back
+</button>
+</center>
+<section class="footer">
+    <div class="logo-container">
+        <img src="logo/ex1.png" class="logo1">
+        <img src="pictures/stada.png" class="logo2">
+    </div>
+        <p>Where Data Sparks!<br>
+        Come join us as we move one step closer towards a data driven world where innovation equals<span> Sustainability!</p>
+<div class="icons">
+    <a href="https://www.instagram.com/expectations.24_cu?igsh=YzRpdHkzMTd5eXI0"><i class="fa fa-university"></i></a>
+    <!-- <a href="https://www.facebook.com/christ.university/"><i class="fa fa-facebook"></i></a>
+    <a href="https://www.instagram.com/expectations.24_cu?igsh=YzRpdHkzMTd5eXI0"><i class="fa fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/in/statistics-datascience-christuniversity/"><i class="fa fa-linkedin"></i></a> -->
+</div>
+<p>Made by Asmita Roy Mondal</p>
+        </section>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+            const headingElement = document.querySelector('#discover-heading'); // Target the h1 element
+        
+            // Intersection Observer to watch the heading element
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible'); // Add visible class when in view
+                    } else {
+                        entry.target.classList.remove('visible'); // Remove visible class when out of view
+                    }
+                });
+            });
+        
+            observer.observe(headingElement); // Observe the heading
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+    const hiddenElements = document.querySelectorAll('.about_content'); // Targets both image and text
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            } else {
+                entry.target.classList.remove('visible');
+            }
+        });
+    });
+
+    hiddenElements.forEach(el => observer.observe(el)); // Observe both elements
+});
+</script>
+    </body>
+</html>    

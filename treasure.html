@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Event Details</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="events.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        
+    </head>
+    <body>
+        <section class="header">
+            <nav>
+                <a href="index.html"><img src="logo/christ.png" class="logo"></a>
+        
+                <a href="index.html"> <img src="logo/ex3.png" class="logo2"></a>
+            </nav>
+                
+        </nav>
+        <h1 id="discover-heading" class="hidden">TREASURE HUNT</h1>
+</section>
+
+<section id="about" class="about">
+    <div class="about_container">
+        <div class="about_image about_content">
+            <img src="pictures/th.jpg" alt="About Image">
+        </div>
+        <div class="about_text about_content">
+            <p style="font-size: 16px; font-family: 'Arial', sans-serif; color: #ffffff; line-height: 1.6;">
+                <strong>Time:</strong> 2:00 PM to 4:30 PM
+            </p>
+            <p style="font-size: 16px; font-family: 'Arial', sans-serif; color: #ffffff; line-height: 1.6;">
+                <strong>Venue:</strong> R&D 111
+            </p>
+            <br>
+            <h3 style="color: #ff4500; font-size: 18px; font-family: 'Arial', sans-serif;">
+                Event Heads:
+            </h3>
+            <p style="font-size: 16px; font-family: 'Arial', sans-serif; color: #ffffff; line-height: 1.6;">
+                Tejal Menezes: 9606747790 <br>
+                Tina Dokaniya: 7338495131
+            </p>
+            <br>
+            <h3 style="color: #ffd700; font-size: 18px; font-family: 'Arial', sans-serif;">
+                Event Description:
+            </h3>
+            <p style="font-size: 16px; font-family: 'Arial', sans-serif; color: #ffffff; line-height: 1.6;">
+                Get ready for an exhilarating adventure with our Treasure Hunt, where wit, teamwork, and quick thinking will lead you to victory! This event will take participants on an exciting quest across the college campus, solving a series of riddles and challenges at each location to unlock the next clue. Participants will need sharp observation skills and a strategic approach as they navigate through hidden spots and unlock secrets scattered around the campus.
+            </p>
+            <br>
+            <h3 style="color: #ffd700; font-size: 18px; font-family: 'Arial', sans-serif;">
+                Rules:
+            </h3>
+            <p style="font-size: 16px; font-family: 'Arial', sans-serif; color: #ffffff; line-height: 1.6;">
+                - 3 Participants per team.<br>
+                - Stay in designated areas and teams must work independently.<br>
+                - Time limits will be enforced; late arrivals or external help will lead to elimination.<br>
+                - Sharing or tampering with clues will lead to disqualification.<br>
+                - A printed resume is required.<br>
+                - Report 10 minutes prior to the event.<br>
+                - Dressing in formals will earn you extra points.<br>
+                - Don’t forget to bring your mobile phone!
+            </p>
+        </div>
+    </div>
+    
+    
+        
+        
+        
+        
+    </div>
+</section>
+<center>
+    <button onclick="history.back()" 
+    style="background-color: #000000; color: #ffffff; font-size: 16px; padding: 10px 20px; border: none; border-radius: 20px;cursor: pointer; margin-top: 20px; margin-bottom: 10px;">
+Go Back
+</button>
+</center>
+
+<section class="footer">
+    <div class="logo-container">
+        <img src="logo/ex1.png" class="logo1">
+        <img src="pictures/stada.png" class="logo2">
+    </div>
+        <p>Where Data Sparks!<br>
+        Come join us as we move one step closer towards a data driven world where innovation equals<span> Sustainability!</p>
+<div class="icons">
+    <a href="https://www.instagram.com/expectations.24_cu?igsh=YzRpdHkzMTd5eXI0"><i class="fa fa-university"></i></a>
+    <!-- <a href="https://www.facebook.com/christ.university/"><i class="fa fa-facebook"></i></a>
+    <a href="https://www.instagram.com/expectations.24_cu?igsh=YzRpdHkzMTd5eXI0"><i class="fa fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/in/statistics-datascience-christuniversity/"><i class="fa fa-linkedin"></i></a> -->
+</div>
+<p>Made by Asmita Roy Mondal</p>
+        </section>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+            const headingElement = document.querySelector('#discover-heading'); // Target the h1 element
+        
+            // Intersection Observer to watch the heading element
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible'); // Add visible class when in view
+                    } else {
+                        entry.target.classList.remove('visible'); // Remove visible class when out of view
+                    }
+                });
+            });
+        
+            observer.observe(headingElement); // Observe the heading
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+    const hiddenElements = document.querySelectorAll('.about_content'); // Targets both image and text
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            } else {
+                entry.target.classList.remove('visible');
+            }
+        });
+    });
+
+    hiddenElements.forEach(el => observer.observe(el)); // Observe both elements
+});
+</script>
+    </body>
+</html>    

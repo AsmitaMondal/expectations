@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Event Details</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="events.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        
+    </head>
+    <body>
+        <section class="header">
+            <nav>
+                <a href="index.html"><img src="logo/christ.png" class="logo"></a>
+        
+                <a href="index.html"> <img src="logo/ex3.png" class="logo2"></a>
+            </nav>
+                
+        </nav>
+        <h1 id="discover-heading" class="hidden">SHARK TANK</h1>
+</section>
+
+<section id="about" class="about">
+    <div class="about_container">
+        <div class="about_image about_content">
+            <img src="pictures/st.jpg" alt="About Image">
+        </div>
+        <div class="about_text about_content">
+            <p style="font-size: 16px; font-family: 'Arial', sans-serif; color: #ffffff; line-height: 1.6;">
+                <strong>Time:</strong> 12:30 PM to 3:00 PM
+            </p>
+            <p style="font-size: 16px; font-family: 'Arial', sans-serif; color: #ffffff; line-height: 1.6;">
+                <strong>Venue:</strong> R&D CR1
+            </p>
+            <br>
+            <h3 style="color: #ff4500; font-size: 18px; font-family: 'Arial', sans-serif;">
+                Event Heads:
+            </h3>
+            <p style="font-size: 16px; font-family: 'Arial', sans-serif; color: #ffffff; line-height: 1.6;">
+                Champaka R: 7022328941 <br>
+                Shirley Sharon: 7829358627
+            </p>
+            <br>
+            <h3 style="color: #ffd700; font-size: 18px; font-family: 'Arial', sans-serif;">
+                Event Description:
+            </h3>
+            <p style="font-size: 16px; font-family: 'Arial', sans-serif; color: #ffffff; line-height: 1.6;">
+                Unleash your creativity in this exciting pitching competition. In Round 1, each team member delivers a 3-minute pitch on a business idea, followed by rapid Q&A. The best 4-5 teams advance to the Final Round, where they’ll have 10 minutes to prepare a pitch on a surprise topic. Judging focuses on originality, clarity, confidence, and Q&A handling. Stay sharp—time overruns or last-minute changes will cost points. Don’t forget your laptop.
+            </p>
+            <br>
+            <h3 style="color: #ffd700; font-size: 18px; font-family: 'Arial', sans-serif;">
+                Rules:
+            </h3>
+            <p style="font-size: 16px; font-family: 'Arial', sans-serif; color: #ffffff; line-height: 1.6;">
+                - Teams must contain 2-3 members.<br>
+                - Each pitch must be completed within 3 minutes, with mandatory participation from every team member.<br>
+                - Finalists get 10 minutes to prepare a pitch on an on-spot topic.<br>
+                - PPTs must be submitted immediately after the preparation time ends.<br>
+                - Any changes to slides after submission will result in penalties.
+            </p>
+        </div>
+    </div>
+    
+    
+        
+        
+        
+        
+    </div>
+</section>
+<center>
+    <button onclick="history.back()" 
+    style="background-color: #000000; color: #ffffff; font-size: 16px; padding: 10px 20px; border: none; border-radius: 20px;cursor: pointer; margin-top: 20px; margin-bottom: 10px;">
+Go Back
+</button>
+</center>
+<section class="footer">
+    <div class="logo-container">
+        <img src="logo/ex1.png" class="logo1">
+        <img src="pictures/stada.png" class="logo2">
+    </div>
+        <p>Where Data Sparks!<br>
+        Come join us as we move one step closer towards a data driven world where innovation equals<span> Sustainability!</p>
+<div class="icons">
+    <a href="https://www.instagram.com/expectations.24_cu?igsh=YzRpdHkzMTd5eXI0"><i class="fa fa-university"></i></a>
+    <!-- <a href="https://www.facebook.com/christ.university/"><i class="fa fa-facebook"></i></a>
+    <a href="https://www.instagram.com/expectations.24_cu?igsh=YzRpdHkzMTd5eXI0"><i class="fa fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/in/statistics-datascience-christuniversity/"><i class="fa fa-linkedin"></i></a> -->
+</div>
+<p>Made by Asmita Roy Mondal</p>
+        </section>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+            const headingElement = document.querySelector('#discover-heading'); // Target the h1 element
+        
+            // Intersection Observer to watch the heading element
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible'); // Add visible class when in view
+                    } else {
+                        entry.target.classList.remove('visible'); // Remove visible class when out of view
+                    }
+                });
+            });
+        
+            observer.observe(headingElement); // Observe the heading
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+    const hiddenElements = document.querySelectorAll('.about_content'); // Targets both image and text
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            } else {
+                entry.target.classList.remove('visible');
+            }
+        });
+    });
+
+    hiddenElements.forEach(el => observer.observe(el)); // Observe both elements
+});
+</script>
+    </body>
+</html>    

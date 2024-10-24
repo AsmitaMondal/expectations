@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+/* Webkit scrollbar styles */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #0b3d91, #ff1f5c); /* Gradient from dark blue to dark pink */
+  border-radius: 10px; /* Rounded corners */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Background of the scrollbar track */
+  background-color: black;
+
+}
+
+/* Additional styling for better visibility */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #0b3d91, #ff007f); /* Slightly lighter gradient on hover */
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.878), rgba(20, 2, 34, 0.588)), url("pictures/view-panda-bear-with-robotic-tech-parts.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: #fff;
+}
+.header{
+  width: 100%;
+  height:30%;
+      position: relative;
+
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.878), rgba(20, 2, 34, 0.681)), url("pictures/view-panda-bear-with-robotic-tech-parts.jpg");
+  background-size:cover;
+  background-position: center;
+   */
+}
+/* Main navigation bar styling */
+nav {
+  display: flex;
+  padding: 2% 6%;
+  padding-top: 0%;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent; /* Default background */
+}
+
+nav img {
+  width: 150px;
+}
+
+/* Navigation links styling */
+.nav-links {
+  flex: 1;
+  text-align: right;
+}
+
+.nav-links ul {
+  list-style: none;
+}
+
+.nav-links ul li {
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+}
+
+.nav-links ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 540;
+  font-size: 16px;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+  font-family: "Special Elite", system-ui;
+  font-weight: 400;
+  font-style: normal;
+
+  
+}
+/* Creating the circle hover effect */
+.nav-links ul li::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(104, 1, 58, 0.896); /* Cool semi-transparent blue */
+  border-radius: 50%;
+  z-index: 0; /* Behind the text */
+  transition: width 0.4s ease, height 0.4s ease, top 0.4s ease, left 0.4s ease;
+  transform: translate(-50%, -50%);
+}
+
+.nav-links ul li:hover::before {
+  width: 100%; /* Expand the circle */
+  height: 100%;
+  top: 50%;
+  left: 50%;
+}
+
+/* For smooth animations on hover */
+.nav-links ul li:hover::after {
+  width: 0%;
+}
+
+/* Hamburger icon and hide menu icon */
+.fa-bars,
+.fa-times {
+  display: none;
+  font-size: 28px;
+  color: #ffffff; /* White color for the icon */
+  cursor: pointer;
+}
+
+/* font-family: "Orbitron", sans-serif;
+font-optical-sizing: auto;
+font-weight: 600;
+font-style: normal; */
+/* Responsive Design */
+
+@media (max-width: 768px) {
+  /* Make the menu background translucent violet */
+  .nav-links {
+      position: absolute;
+      background: rgba(148, 0, 211, 0.8); /* Translucent violet */
+      height: 100vh;
+      width: 100%;
+      top: 0;
+      right: -200px; /* Hidden by default */
+      text-align: center;
+      transition: all 0.5s ease;
+      z-index: 99; /* Ensure it sits above other content */
+  }
+
+  /* When the menu is shown, it slides in from the right */
+  .nav-links.showMenu {
+      right: 0;
+  }
+
+  /* Show the hamburger icon */
+  .fa-bars {
+      display: block;
+      font-size: 15px;
+      color: #ffffff; /* White color for the hamburger icon */
+  }
+
+  /* Show the close icon when the menu is opened */
+  .fa-times {
+      display: block;
+      color: #ffffff; /* White color for the close icon */
+  }
+
+  /* Adjust the links to be stacked vertically */
+  .nav-links ul li {
+      display: block;
+      margin: 50px 0;
+  }
+
+  .nav-links ul li a {
+      font-size: 20px;
+      transition: font-size 0.3s ease; /* Smooth text expansion on hover */
+  }
+
+  /* Simpler hover effect - text expansion */
+  .nav-links ul li:hover a {
+      font-size: 24px; /* Expand text size when hovered */
+      color: #e405a4;  /* Choose another color for text hover, e.g., light yellow */
+      text-shadow: none;
+  }
+
+  /* Remove the circle hover effect */
+  .nav-links ul li::before {
+      display: none;
+  }
+}
+@media (max-width: 400px){
+  .fa-bars {
+      display: block;
+      font-size: 15px;
+      color: #ffffff; /* White color for the hamburger icon */
+  }
+}
+
+.logo{
+  width:200px;
+  padding-top: 15px;
+  cursor:pointer;
+  margin: 0;
+}
+::selection {
+  color: #ff79c6;
+  background: #282a36;
+}
+h1{
+    font-size: 56px;
+    color: #ffffff;
+    font-family: "Audiowide", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    text-shadow: 5px 5px 10px black;
+    opacity: 0; /* Initial hidden state */
+    margin-bottom: -40px;
+  }
+  .hidden {
+    opacity: 0; /* Hidden by default */
+    transform: translateY(50px); /* Slightly moved down */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Smooth transition */
+  }
+  
+  .visible {
+    opacity: 1; /* Fully visible when scrolled into view */
+    transform: translateY(0); /* Move back to its original position */
+  }
+
+  .about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    width: 100%;
+}
+
+.about_container {
+    display: flex;
+    flex-direction: row;
+    max-width: 1200px; /* Set a max width for larger screens */
+    width: 100%;
+    border-radius: 30px;
+    padding: 20px; /* Uniform padding for the container */
+}
+
+.about_text {
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    backdrop-filter: blur(10px);
+    border-radius: 10px; /* Optional: Add rounded corners to the text container */
+    margin-left: 10px; /* Space between the image and text container */
+    flex: 1; /* Allows it to grow and shrink equally */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 2.6s ease-in-out, transform 2.6s ease-in-out; /* Smooth transition */
+    transform: translateY(50px); /* Start slightly lower */
+    ;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    font-size: small;
+
+}
+
+.about_image {
+    flex: 1; /* Allows it to grow and shrink equally */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 2.6s ease-in-out, transform 2.6s ease-in-out; /* Smooth transition */
+    transform: translateY(60px); /* Start slightly lower */
+}
+.about_image,
+.about_text {
+    flex: 1; /* Allows both to grow and shrink equally */
+    opacity: 0; /* Hidden by default for fade-in effect */
+    transition: opacity 2.6s ease-in-out, transform 2.6s ease-in-out; /* Smooth transition */
+    transform: translateY(60px); /* Start slightly lower */
+}
+
+.about_content.visible {
+    opacity: 1; /* Show when visible */
+    transform: translateY(0); /* Reset transform */
+}
+.about_image img {
+    width: 85%;
+    height: auto; /* Responsive image */
+    border-radius: 30px;
+}
+
+.about_content.visible {
+    opacity: 1; /* Show when visible */
+    transform: translateY(0); /* Reset transform */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column; /* Stack the image and text */
+        padding: 30px;
+        align-items: center; /* Center content in the column layout */
+    }
+
+    .about_container {
+        flex-direction: column;
+        width: 100%; /* Ensure the container takes full width */
+        text-align: center; /* Center text for better appearance */
+    }
+
+    .about_image, .about_text {
+        width: 100%;
+        margin: 10px auto; /* Space between stacked elements on smaller screens */
+    }
+
+    .about_text {
+        max-width: 90%; /* Prevent overflow and maintain readability */
+        font-size: 14px; /* Reduced font size */
+    }
+
+    .about_image img {
+        max-width: 100%; /* Ensure image is responsive */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+/*---footer---*/
+.footer{
+    width:100%;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 80px;
+    padding-top: 20px;
+    background-color: rgba(0, 0, 0, 0.601);
+}
+.footer h4{
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+.footer p{
+    font-size: 15px;
+}
+.icons .fa{
+    margin:0 10px;
+    cursor:pointer;
+    padding:12px 0;
+    text-decoration:none;
+}
+.fa-heart-o{
+    color:#f44336;
+}
+.logo-container {
+    display: flex;
+    justify-content: center; /* Center both logos horizontally */
+    align-items: center;     /* Align logos vertically */
+    gap: 10px;               /* Add space between the logos */
+}
+
+.logo1 {
+    width: 100px;
+    cursor: pointer;
+    padding-bottom: 0; 
+    padding-top: 15px;      /* Remove negative padding */
+}
+.logo2 {
+    width: 60px;
+    cursor: pointer;
+    padding-bottom: 0;       /* Remove negative padding */
+}
+
+
+
+

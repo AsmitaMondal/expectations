@@ -1,0 +1,538 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+/* Webkit scrollbar styles */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #0b3d91, #ff1f5c); /* Gradient from dark blue to dark pink */
+  border-radius: 10px; /* Rounded corners */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Background of the scrollbar track */
+  background-color: black;
+
+}
+
+/* Additional styling for better visibility */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #0b3d91, #ff007f); /* Slightly lighter gradient on hover */
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.878), rgba(20, 2, 34, 0.588)), url("pictures/view-panda-bear-with-robotic-tech-parts.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: #fff;
+}
+.header{
+  min-height: 100vh;
+  width: 100%;
+      position: relative;
+
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.878), rgba(20, 2, 34, 0.681)), url("pictures/view-panda-bear-with-robotic-tech-parts.jpg");
+  background-size:cover;
+  background-position: center;
+   */
+}
+/* Main navigation bar styling */
+nav {
+  display: flex;
+  padding: 2% 6%;
+  padding-top: 0%;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent; /* Default background */
+}
+
+nav img {
+  width: 150px;
+}
+
+/* Navigation links styling */
+.nav-links {
+  flex: 1;
+  text-align: right;
+}
+
+.nav-links ul {
+  list-style: none;
+}
+
+.nav-links ul li {
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+}
+
+.nav-links ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 540;
+  font-size: 16px;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+  font-family: "Special Elite", system-ui;
+  font-weight: 400;
+  font-style: normal;
+
+  
+}
+/* Creating the circle hover effect */
+.nav-links ul li::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(104, 1, 58, 0.896); /* Cool semi-transparent blue */
+  border-radius: 50%;
+  z-index: 0; /* Behind the text */
+  transition: width 0.4s ease, height 0.4s ease, top 0.4s ease, left 0.4s ease;
+  transform: translate(-50%, -50%);
+}
+
+.nav-links ul li:hover::before {
+  width: 100%; /* Expand the circle */
+  height: 100%;
+  top: 50%;
+  left: 50%;
+}
+
+/* For smooth animations on hover */
+.nav-links ul li:hover::after {
+  width: 0%;
+}
+
+/* Hamburger icon and hide menu icon */
+.fa-bars,
+.fa-times {
+  display: none;
+  font-size: 28px;
+  color: #ffffff; /* White color for the icon */
+  cursor: pointer;
+}
+
+/* font-family: "Orbitron", sans-serif;
+font-optical-sizing: auto;
+font-weight: 600;
+font-style: normal; */
+/* Responsive Design */
+
+@media (max-width: 768px) {
+  .logo{
+    width:140px;
+}
+  /* Make the menu background translucent violet */
+  .nav-links {
+      position: absolute;
+      background: rgba(148, 0, 211, 0.8); /* Translucent violet */
+      height: 100vh;
+      width: 100%;
+      top: 0;
+      right: -200px; /* Hidden by default */
+      text-align: center;
+      transition: all 0.5s ease;
+      z-index: 99; /* Ensure it sits above other content */
+  }
+
+  /* When the menu is shown, it slides in from the right */
+  .nav-links.showMenu {
+      right: 0;
+  }
+
+  /* Show the hamburger icon */
+  .fa-bars {
+      display: block;
+      font-size: 15px;
+      color: #ffffff; /* White color for the hamburger icon */
+  }
+
+  /* Show the close icon when the menu is opened */
+  .fa-times {
+      display: block;
+      color: #ffffff; /* White color for the close icon */
+  }
+
+  /* Adjust the links to be stacked vertically */
+  .nav-links ul li {
+      display: block;
+      margin: 50px 0;
+  }
+
+  .nav-links ul li a {
+      font-size: 20px;
+      transition: font-size 0.3s ease; /* Smooth text expansion on hover */
+  }
+
+  /* Simpler hover effect - text expansion */
+  .nav-links ul li:hover a {
+      font-size: 24px; /* Expand text size when hovered */
+      color: #e405a4;  /* Choose another color for text hover, e.g., light yellow */
+      text-shadow: none;
+  }
+
+  /* Remove the circle hover effect */
+  .nav-links ul li::before {
+      display: none;
+  }
+}
+@media (max-width: 400px){
+  .fa-bars {
+      display: block;
+      font-size: 15px;
+      color: #ffffff; /* White color for the hamburger icon */
+  }
+  .logo{
+    width:140px;
+}
+}
+
+.logo{
+  width:200px;
+  padding-top: 15px;
+  cursor:pointer;
+  margin: 0;
+}
+::selection {
+  color: #ff79c6;
+  background: #282a36;
+}
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    height: 400px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+    margin-top: -120px;
+    margin-bottom: -120px;
+
+}
+
+.card {
+    width: 90px;
+    border-radius: .75rem;
+    background-size: cover;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 2rem;
+    margin: 0 10px;
+    display: flex;
+    align-items: flex-end;
+    transition: .6s cubic-bezier(.28,-0.03,0,.99);
+    box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.8);
+}
+
+.card > .row {
+    color: white;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.card > .row > .icon {
+    background: #223;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+.card > .row > .description {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    height: 80px;
+    width: 520px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition-delay: .3s;
+    transition: all .3s ease;
+}
+
+.description p {
+    color: #ffffff;
+    padding-top: 5px;
+}
+
+.description h4 {
+    text-transform: uppercase;
+background-color: rgba(0, 0, 0, 0.621);
+    padding-left:20px;
+    text-shadow: 3px 3px 10px black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 20px;
+    font-size: 20px;
+}
+/* Align the 'View Details' to the right and add shadow */
+.description a {
+  display: block;
+  text-align: center; /* Align text to the right */
+  text-decoration: none;
+  color: #ffffff; /* Set the text color */
+  font-weight: bold;
+  margin-top: 10px; /* Spacing above the link */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* Add black shadow */
+  transition: all 0.2s ease;
+  padding-bottom: 5px;
+}
+input {
+    display: none;
+}
+
+input:checked + label {
+  width: 460px; /* Ensure this is wide enough for your design */
+}
+
+input:checked + label .description {
+  opacity: 1 !important; /* Ensure description is visible */
+  transform: translateY(0) !important; /* Reset transformation */
+}
+
+/* Add styles to hide descriptions initially if needed */
+.card .description {
+  opacity: 0; /* Hide descriptions by default */
+  transform: translateY(10px); /* Slightly shift them down */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+
+.card[for="c1"] {
+    background-image: url('pictures/cc1.jpg');
+}
+.card[for="c2"] {
+    background-image: url('pictures/qq.jpg');
+}
+.card[for="c3"] {
+    background-image: url('pictures/df.jpg');
+}
+.card[for="c4"] {
+    background-image: url('pictures/cc.jpg');
+}
+.card[for="c5"] {
+  background-image: url('pictures/hr.jpg');
+}
+.card[for="c6"] {
+  background-image: url('pictures/dv.jpg');
+}
+
+.card[for="c7"] {
+  background-image: url('pictures/mo.jpg');
+}
+.card[for="c8"] {
+  background-image: url('pictures/mm.jpg');
+}
+.card[for="c9"] {
+  background-image: url('pictures/pp.jpg');
+}
+.card[for="c10"] {
+  background-image: url('pictures/rr.jpg');
+}
+.card[for="c11"] {
+background-image: url('pictures/tw.jpg');
+}
+.card[for="c12"] {
+background-image: url('pictures/mw.jpg');
+}
+
+.card[for="c13"] {
+  background-image: url('pictures/st.jpg');
+}
+.card[for="c14"] {
+background-image: url('pictures/th.jpg');
+}
+.card[for="c15"] {
+background-image: url('pictures/ch.jpg');
+}
+
+h1{
+  font-size: 56px;
+  color: #ffffff;
+  font-family: "Audiowide", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  text-shadow: 5px 5px 10px black;
+  opacity: 0; /* Initial hidden state */
+  margin-bottom: -100px;
+}
+.hidden {
+  opacity: 0; /* Hidden by default */
+  transform: translateY(50px); /* Slightly moved down */
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Smooth transition */
+}
+
+.visible {
+  opacity: 1; /* Fully visible when scrolled into view */
+  transform: translateY(0); /* Move back to its original position */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+
+  .wrapper {
+    height: 120vh;
+}
+
+  .container {
+    width: 80%;
+    height:80%; /* Full width for container */
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center; /* Center align cards */
+    padding: 0; /* Remove any padding */
+  }
+
+  .card {
+    margin-bottom: 20px;
+    width:280px;
+}
+
+  .card > .row {
+    justify-content: space-between; /* Space between icon and description */
+    flex-wrap: nowrap; /* Prevent wrapping */
+  }
+
+  .card > .row > .icon {
+    width: 40px; /* Smaller icon size */
+    height: 40px; /* Smaller icon size */
+    margin:20px;
+    margin-top: 40px;
+  }
+
+  input:checked + label {
+    width: 320px; 
+    height: 400px;
+  }
+
+.description h4 {
+    padding-left:10px;
+    font-size: 15px;
+    padding-bottom: -20px;
+}
+/* Align the 'View Details' to the right and add shadow */
+.description a {
+  display: block;
+  margin-top: 10px; 
+  padding-bottom: 2px;
+text-align: left;
+padding-left: 100px;
+  font-size: 12px;
+  text-shadow: 2px 2px 8px black;
+  text-transform: uppercase;
+}
+.description p{
+  padding-top: 30px;
+}
+  h1{
+    font-size: 56px;
+    color: #ffffff;
+    font-family: "Audiowide", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    text-shadow: 5px 5px 10px black;
+    opacity: 0; /* Initial hidden state */
+    margin-bottom: 30px;
+  }
+}
+
+
+#customAlert {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background:linear-gradient(rgb(3, 3, 43),rgb(161, 41, 61),rgb(0, 0, 0));
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  color:white;
+  padding: 20px;
+  text-align: center;
+  z-index: 9999; /* Ensure it appears on top */
+}
+
+#closeAlert {
+  margin-top: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+  background:linear-gradient(rgb(3, 3, 43),rgb(0, 0, 0));
+  color:white;
+  border-radius: 20px;
+}
+
+/*---footer---*/
+.footer{
+  width:100%;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 80px;
+  padding-top: 20px;
+  background-color: rgba(0, 0, 0, 0.601);
+}
+.footer h4{
+  margin-bottom: 25px;
+  margin-top: 20px;
+  font-weight: 600;
+}
+.footer p{
+  font-size: 15px;
+}
+.icons .fa{
+  margin:0 10px;
+  cursor:pointer;
+  padding:12px 0;
+  text-decoration:none;
+}
+.fa-heart-o{
+  color:#f44336;
+}
+.logo-container {
+  display: flex;
+  justify-content: center; /* Center both logos horizontally */
+  align-items: center;     /* Align logos vertically */
+  gap: 10px;               /* Add space between the logos */
+}
+
+.logo1 {
+  width: 100px;
+  cursor: pointer;
+  padding-bottom: 0; 
+  padding-top: 15px;      /* Remove negative padding */
+}
+.logo2 {
+  width: 60px;
+  cursor: pointer;
+  padding-bottom: 0;       /* Remove negative padding */
+}
+
+
+
