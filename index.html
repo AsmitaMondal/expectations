@@ -266,6 +266,11 @@ html{
 
 <br>
 <br>
+    <center>
+    <div class="point-container">
+        <img src="pictures/pointers.png" class="point">
+    </div>
+</center>
 <div class="gradient-line" id="gradientLine3"></div>
 <h1 id="discover-heading4" class="hidden">THE TEAM</h1>
 <section class="videos">
@@ -717,7 +722,23 @@ window.onload = function() {
   }
 };
 
+document.addEventListener("DOMContentLoaded", function () {
+    const pointContainer = document.querySelector('.point-container'); // Target the container of the image
 
+    // Intersection Observer to watch the point container
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.querySelector('.point').classList.add('visible'); // Add visible class when in view
+            } else {
+                entry.target.querySelector('.point').classList.remove('visible'); // Remove visible class when out of view
+            }
+        });
+    });
+
+    // Observe the point container
+    observer.observe(pointContainer); // Observe the point container
+});
     
 </script>
 
