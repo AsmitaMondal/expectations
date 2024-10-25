@@ -20,6 +20,38 @@
 html{
     scroll-behavior: smooth;
 }
+    /* Style for the popup */
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8); /* Dark glass effect */
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px); /* Glass effect */
+  z-index: 9999;
+  opacity: 0; /* Initially transparent */
+  transition: opacity 0.5s ease-in-out; /* Smooth transition */
+}
+
+/* Animation for the fade in and out */
+.popup.show {
+  display: block;
+  opacity: 1; /* Fully visible */
+}
+
+.popup.hide {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
 </style>
 
 
@@ -27,6 +59,10 @@ html{
 
 
 <body>    
+
+    <div id="customPopup" class="popup">
+  <p>This website feels better on wider screens. Consider switching to laptops or desktops for the best experience.</p>
+</div>
 
 
 <section class="header">
@@ -620,7 +656,31 @@ document.addEventListener("DOMContentLoaded", function () {
             hiddenElements.forEach(el => observer.observe(el)); // Observe both elements
         });
 
-        
+       // Function to show the popup
+function showPopup() {
+  const popup = document.getElementById('customPopup');
+  popup.classList.add('show');
+  
+  // Automatically fade out after 5 seconds
+  setTimeout(() => {
+    popup.classList.add('hide');
+  }, 5000); // 5 seconds
+  
+  // Remove from DOM after fade out
+  setTimeout(() => {
+    popup.classList.remove('show', 'hide');
+    popup.style.display = 'none';
+  }, 5500); // 5.5 seconds (to finish fade out)
+}
+
+// Call the function on page load only for screens less than 1000px
+window.onload = function() {
+  if (window.innerWidth < 1000) { // For small screens
+    showPopup();
+  }
+};
+
+    
 </script>
 
 
