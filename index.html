@@ -39,8 +39,6 @@ html{
   z-index: 9999;
   opacity: 0; /* Initially transparent */
   transition: opacity 0.5s ease-in-out; /* Smooth transition */
-  width: 90vw; /* Use viewport width for better responsiveness */
-  max-width: 400px; /* Maximum width for larger screens */
   word-wrap: break-word; /* Ensure text doesn't overflow */
   box-sizing: border-box;
 }
@@ -69,7 +67,7 @@ html{
 /* Ensure popup is responsive for smaller screens */
 @media screen and (max-width: 600px) {
   .popup {
-    width: 90%; /* Adjust width for small screens */
+    width: 80%; /* Adjust width for small screens */
 /*     left: 30%; */
     transform: translateX(-50%); 
     padding: 10px 15px;
