@@ -25,7 +25,7 @@ html{
   display: none; /* Hidden by default */
   position: fixed;
   top: 20px; /* Positioned toward the top */
-/*   left: 50%; */
+  left: 50%;
   transform: translateX(-50%);
   background: rgba(0, 0, 0, 0.8); /* Dark glass effect */
   color: #fff;
@@ -41,6 +41,7 @@ html{
   transition: opacity 0.5s ease-in-out; /* Smooth transition */
   word-wrap: break-word; /* Ensure text doesn't overflow */
   box-sizing: border-box;
+  max-width: 90%; /* Prevent overflow on small screens */
 }
 
 /* Animation for the fade in and out */
@@ -64,15 +65,17 @@ html{
   cursor: pointer;
 }
 
-/* Ensure popup is responsive for smaller screens */
+/* Responsive adjustments for smaller screens */
 @media screen and (max-width: 600px) {
   .popup {
     width: 80%; /* Adjust width for small screens */
-/*     left: 30%; */
+    left: 50%;
+    transform: translateX(-50%);
     padding: 10px 15px;
     font-size: 14px; /* Smaller font size for small screens */
   }
 }
+
 
 
 </style>
