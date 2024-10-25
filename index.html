@@ -39,8 +39,10 @@ html{
   z-index: 9999;
   opacity: 0; /* Initially transparent */
   transition: opacity 0.5s ease-in-out; /* Smooth transition */
-  width: 90%;
-  max-width: 400px; /* Ensures the popup doesn’t get too wide */
+  width: 90vw; /* Use viewport width for better responsiveness */
+  max-width: 400px; /* Maximum width for larger screens */
+  word-wrap: break-word; /* Ensure text doesn't overflow */
+  box-sizing: border-box;
 }
 
 /* Animation for the fade in and out */
@@ -63,6 +65,18 @@ html{
   color: #fff;
   cursor: pointer;
 }
+
+/* Ensure popup is responsive for smaller screens */
+@media screen and (max-width: 600px) {
+  .popup {
+    width: 90%; /* Adjust width for small screens */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 15px;
+    font-size: 14px; /* Smaller font size for small screens */
+  }
+}
+
 
 </style>
 
