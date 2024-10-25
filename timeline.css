@@ -54,6 +54,7 @@ body {
   transform: translateY(0px);
 
 }
+
 .scroll-message1 {
   opacity: 0; /* Initially hidden */
   transition: opacity 1.6s ease-in-out; /* Smooth fade-in effect */
@@ -68,6 +69,14 @@ body {
   opacity: 1; /* Fully visible when in view */
   transform: translateY(0px);
 
+}
+@media(max-width: 768px){
+  .scroll-message h2{
+    font-size:90%;
+  }
+  .scroll-message1 h2{
+    font-size:90%;
+  }
 }
 .header{
   min-height: 100vh;
