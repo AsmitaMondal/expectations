@@ -1233,3 +1233,30 @@ video {
     }
 }
 
+/* Responsive .point class */
+.point {
+    width: 40%;
+    border-radius: 50px;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 1.5s ease-in-out;
+    transform: translateY(70px);
+}
+
+@media (max-width: 768px) {
+    .point {
+        width: 65%; /* Adjusts image size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .point {
+        width: 85%; /* Further adjusts size for very small screens */
+    }
+}
+
+/* Class to handle visibility */
+.point.visible {
+    opacity: 1; /* Fully visible when scrolled into view */
+    transform: translateY(0px);
+
+}
