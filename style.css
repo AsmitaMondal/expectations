@@ -1259,7 +1259,7 @@ video {
 
 @media (max-width: 480px) {
     .point {
-        width: 85%; /* Further adjusts size for very small screens */
+        width: 86.5%; /* Further adjusts size for very small screens */
     }
 }
 
