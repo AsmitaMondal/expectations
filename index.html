@@ -20,11 +20,11 @@
 html{
     scroll-behavior: smooth;
 }
-    /* Style for the popup */
+/* Style for the popup */
 .popup {
   display: none; /* Hidden by default */
   position: fixed;
-  bottom: 20px;
+  top: 20px; /* Positioned toward the top */
   left: 50%;
   transform: translateX(-50%);
   background: rgba(0, 0, 0, 0.8); /* Dark glass effect */
@@ -39,6 +39,8 @@ html{
   z-index: 9999;
   opacity: 0; /* Initially transparent */
   transition: opacity 0.5s ease-in-out; /* Smooth transition */
+  width: 90%;
+  max-width: 400px; /* Ensures the popup doesn’t get too wide */
 }
 
 /* Animation for the fade in and out */
@@ -52,6 +54,16 @@ html{
   transition: opacity 0.5s ease-in-out;
 }
 
+/* Close button style */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+
 </style>
 
 
@@ -61,8 +73,10 @@ html{
 <body>    
 
     <div id="customPopup" class="popup">
-  <p>This website feels better on wider screens. Consider switching to laptops or desktops for the best experience.</p>
-</div>
+        <span class="close-btn" onclick="closePopup()">×</span>
+        <p>This website feels better on wider screens. Consider switching to laptops or desktops for the best experience.</p>
+      </div>
+      
 
 
 <section class="header">
@@ -656,7 +670,7 @@ document.addEventListener("DOMContentLoaded", function () {
             hiddenElements.forEach(el => observer.observe(el)); // Observe both elements
         });
 
-       // Function to show the popup
+ // Function to show the popup
 function showPopup() {
   const popup = document.getElementById('customPopup');
   popup.classList.add('show');
@@ -673,12 +687,20 @@ function showPopup() {
   }, 5500); // 5.5 seconds (to finish fade out)
 }
 
+// Function to close the popup manually
+function closePopup() {
+  const popup = document.getElementById('customPopup');
+  popup.classList.remove('show');
+  popup.style.display = 'none';
+}
+
 // Call the function on page load only for screens less than 1000px
 window.onload = function() {
   if (window.innerWidth < 1000) { // For small screens
     showPopup();
   }
 };
+
 
     
 </script>
