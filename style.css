@@ -63,6 +63,8 @@ nav img {
 .nav-links {
     flex: 1;
     text-align: right;
+    overflow-x: hidden;
+
 }
 
 .nav-links ul {
@@ -86,6 +88,8 @@ nav img {
     font-family: "Special Elite", system-ui;
     font-weight: 400;
     font-style: normal;
+    overflow-x: hidden;
+
 
     
 }
