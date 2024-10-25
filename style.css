@@ -1193,26 +1193,11 @@ h2.visible {
     align-items: center;
     opacity: 0; /* Start invisible */
     transition: opacity 0.5s ease; /* Transition for opacity */
-/*     transform: rotate(270deg); /* Rotate the video */
-    transform-origin: center; /* Set the origin of rotation */ */
+    transform: rotate(270deg); /* Rotate the video */
+    transform-origin: center; /* Set the origin of rotation */
     overflow: hidden; /* Hide overflow to prevent scroll */
 }
-/* Apply rotation only on larger screens */
-@media (min-width: 768px) {
-    .video-container {
-        transform: rotate(270deg);
-        transform-origin: center center;
-        width: fit-content;
-    }
-}
 
-/* For mobile devices, no rotation */
-@media (max-width: 767px) {
-    .video-container {
-        transform: none; /* No rotation on mobile */
-        width: 100%; /* Ensure video fits the screen */
-    }
-}
 
 .video-container.visible {
     opacity: 1; /* Fully visible when in view */
