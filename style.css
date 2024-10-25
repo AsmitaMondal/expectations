@@ -1227,6 +1227,7 @@ video {
 }
 @media only screen and (max-width: 1000px) {
     #discover-heading4, 
+    #gradientLine3,
     .videos {
         display: none;
     }
