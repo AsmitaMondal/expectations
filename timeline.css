@@ -39,6 +39,36 @@ body {
   position: relative;
   color: #fff;
 }
+.scroll-message {
+  opacity: 0; /* Initially hidden */
+  transition: opacity 1.6s ease-in-out; /* Smooth fade-in effect */
+  transform: translateY(70px);
+}
+.scroll-message h2{
+  padding-top: 20px;
+  font-family:Georgia, 'Times New Roman', Times, serif
+
+}
+.scroll-message.visible {
+  opacity: 1; /* Fully visible when in view */
+  transform: translateY(0px);
+
+}
+.scroll-message1 {
+  opacity: 0; /* Initially hidden */
+  transition: opacity 1.6s ease-in-out; /* Smooth fade-in effect */
+  transform: translateY(70px);
+}
+.scroll-message1 h2{
+  padding-top: 20px;
+  font-family:Georgia, 'Times New Roman', Times, serif
+
+}
+.scroll-message1.visible {
+  opacity: 1; /* Fully visible when in view */
+  transform: translateY(0px);
+
+}
 .header{
   min-height: 100vh;
   width: 100%;
