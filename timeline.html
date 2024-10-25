@@ -17,7 +17,9 @@
     </nav>
     
     <h1 id="discover-heading" class="hidden">DAY 1: 7th November</h1>
-
+  <center class="scroll-message">
+    <h2>On-Spot Registrations Start At 8 a.m Sharp!</h2>
+  </center>
 </nav>
 <div class="wrapper">
   <div class="center-line">
@@ -157,6 +159,10 @@
   <br>
   <h1 id="discover-heading1" class="hidden">DAY 2: 8th November</h1>
 
+    <center class="scroll-message1">
+    <h2>On-Spot Registrations Start At 8 a.m Sharp!</h2>
+  </center>
+      
   <div class="wrapper">
     <div class="center-line">
       <a href="#" class="scroll-icon"><i class="fas fa-caret-up"></i></a>
@@ -340,7 +346,36 @@ document.addEventListener("DOMContentLoaded", function () {
     // Observe each timeline element
     timelineElements.forEach(element => observer.observe(element));
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollMessage = document.querySelector('.scroll-message');
 
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                scrollMessage.classList.add('visible'); // Fade-in when in view
+            } else {
+                scrollMessage.classList.remove('visible'); // Hide when out of view (optional)
+            }
+        });
+    });
+
+    observer.observe(scrollMessage); // Start observing the element
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollMessage = document.querySelector('.scroll-message1');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                scrollMessage.classList.add('visible'); // Fade-in when in view
+            } else {
+                scrollMessage.classList.remove('visible'); // Hide when out of view (optional)
+            }
+        });
+    });
+
+    observer.observe(scrollMessage); // Start observing the element
+});
 </script>
 </body>
 </html>
