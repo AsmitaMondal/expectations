@@ -1225,4 +1225,10 @@ video {
         max-width: 180px; /* Even smaller max width for very small screens */
     }
 }
+@media only screen and (max-width: 1000px) {
+    #discover-heading4, 
+    .videos {
+        display: none;
+    }
+}
 
