@@ -281,22 +281,22 @@ html{
         </section>
 
 <script>
-    window.onload = function() {
-        var video = document.getElementById('myVideo');
-        if (window.innerWidth < 768) { // Adjust the pixel width as needed for small devices
-            video.muted = true;  // Mute for small screens
-        }
-    };
+    // window.onload = function() {
+    //     var video = document.getElementById('myVideo');
+    //     if (window.innerWidth < 768) { // Adjust the pixel width as needed for small devices
+    //         video.muted = true;  // Mute for small screens
+    //     }
+    // };
 
-    // Optionally, you can listen for resize events
-    window.onresize = function() {
-        var video = document.getElementById('myVideo');
-        if (window.innerWidth < 768) {
-            video.muted = true;
-        } else {
-            video.muted = false;  // Unmute for larger screens
-        }
-    };
+    // // Optionally, you can listen for resize events
+    // window.onresize = function() {
+    //     var video = document.getElementById('myVideo');
+    //     if (window.innerWidth < 768) {
+    //         video.muted = true;
+    //     } else {
+    //         video.muted = false;  // Unmute for larger screens
+    //     }
+    // };
 function formatNumber(num) {
         return num < 10 ? "0" + num : num;
     }
